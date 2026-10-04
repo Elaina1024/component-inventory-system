@@ -19,22 +19,3 @@ python -m venv .venv
 Windows 可运行 `python build_executable.py` 生成 `dist/ComponentInventory.exe`。打包步骤与首次运行说明见 [可执行文件打包](PACKAGING.md)。
 
 可运行 `python generate_example_bom.py` 重新生成匿名的 `example_bom.xlsx`。这是单独的示例文件，不会被打进 exe，也不会自动导入数据库。使用它体验 BOM 功能前，请先自行添加对应料号和库存。
-
-## 测试
-
-```powershell
-python run_whitebox_tests.py
-python run_blackbox_tests.py
-```
-
-测试会使用独立的临时数据库。说明见 [白盒测试](WHITEBOX_TESTING.md) 与 [黑盒测试](BLACKBOX_TESTING.md)。
-
-## 数据与公开发布
-
-本目录只包含源码、测试、界面资源和人工生成的示例 BOM。实际库存数据库、备份、导出的拣货单、测试报告及本机 `config.ini` 均未打包；运行后产生的同类文件也由 `.gitignore` 排除。上传前运行：
-
-```powershell
-python audit_public_bundle.py
-```
-
-详情见 [隐私与脱敏说明](PRIVACY.md) 和 [GitHub 上传说明](GITHUB_UPLOAD_GUIDE.md)。项目尚未指定开源许可证；发布前由项目所有者决定是否添加许可证。
